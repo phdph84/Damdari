@@ -31,67 +31,87 @@ import {
   ReceiptLongOutlined,
   TrendingUpOutlined,
 } from "@mui/icons-material";
+import { useSelector } from "react-redux";
 
 const navItems = [
   {
-    text: "Dashboard",
+    text: "پنل مدیریت",
+    t: "Dashboard",
     icon: <HomeOutlined />,
   },
   {
-    text: "Client Facing",
+    text: "گزارش",
+    t: "Report",
     icon: null,
   },
   {
-    text: "Products",
+    text: "تولید مثل",
+    t: "TolidMesl",
     icon: <ShoppingCartOutlined />,
   },
   {
-    text: "Customers",
+    text: "سلامت",
+    t: "Salamat",
     icon: <Groups2Outlined />,
   },
   {
-    text: "Transactions",
+    text: "بهاربند",
+    t: "Baharband",
     icon: <ReceiptLongOutlined />,
   },
   {
-    text: "Geography",
+    text: "گوساله",
+    t: "Gosale",
     icon: <PublicOutlined />,
   },
   {
-    text: "Sales",
+    text: "مگهداری سیستم",
+    t: "NegahdariSystem",
+    icon: <PublicOutlined />,
+  },
+  {
+    text: "مزرعه",
+    t: "Mazrae",
     icon: null,
   },
   {
-    text: "Overview",
+    text: "دام",
+    t: "dam",
     icon: <PointOfSaleOutlined />,
   },
   {
-    text: "Daily",
+    text: "رویداد",
+    t: "Event",
     icon: <TodayOutlined />,
   },
   {
-    text: "Monthly",
+    text: "بهاربند",
+    t: "BaharBandd",
     icon: <CalendarMonthOutlined />,
   },
   {
-    text: "Breakdown",
+    text: "تنظیمات",
+    t: "Tanzimat",
     icon: <PieChartOutlined />,
   },
   {
-    text: "Management",
+    text: "کیف پول",
+    t: "Kifpol",
     icon: null,
   },
 
   {
-    text: "Admin",
+    text: "نگهداری و بروزرسانی سیستم",
+    t: "NegahdaryAndAUpdate",
     icon: <AdminPanelSettingsOutlined />,
   },
-  {
-    text: "Performance",
-    icon: <TrendingUpOutlined />,
-  },
+  // {
+  //   text: "Performance",
+  //   icon: <TrendingUpOutlined />,
+  // },
 ];
 const Sidebar = ({
+  user,
   drawerWidth,
   isSidebarOpen,
   setIsSidebarOpen,
@@ -101,6 +121,7 @@ const Sidebar = ({
   const [active, setActive] = useState("");
   const navigate = useNavigate();
   const theme = useTheme();
+  const mode = useSelector((state) => state.global.mode);
 
   useEffect(() => {
     setActive(pathname.substring(1));
@@ -125,7 +146,7 @@ const Sidebar = ({
           }}
         >
           <Box width="100%">
-            <Box m="1.5rem  3rem 2rem 2rem">
+            <Box m="1.5rem  5rem 0rem 2rem">
               <Box
                 color={theme.palette.secondary.main}
                 sx={{
@@ -134,10 +155,36 @@ const Sidebar = ({
                   justifyContent: "space-between",
                 }}
               >
-                <Box display={"flex"} alignItems={"center"} gap={"0.5rem"}>
-                  <Typography variant="h4" fontWeight="bold">
+                <Box
+                  display={"flex"}
+                  alignItems={"center"}
+                  gap={"0.5rem"}
+                  mb={"1rem"}
+                >
+                  {/* <Typography variant="h4" fontWeight="bold">
                     رهبان
-                  </Typography>
+                  </Typography> */}
+                  {mode === "dark" ? (
+                    <img
+                      alt="img1"
+                      src={require("../../assets/logo rahbaan renderi dark.png")}
+                      style={{
+                        width: "100px",
+                        height: "40px",
+                        marginTop: "10px",
+                      }}
+                    ></img>
+                  ) : (
+                    <img
+                      alt="img1"
+                      src={require("../../assets/logo rahbaan renderi copy-light.png")}
+                      style={{
+                        width: "100px",
+                        height: "40px",
+                        marginTop: "10px",
+                      }}
+                    ></img>
+                  )}
                 </Box>
                 {!isNonMobile && (
                   <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
@@ -147,17 +194,23 @@ const Sidebar = ({
               </Box>
             </Box>
             <List>
-              {navItems.map(({ text, icon }) => {
+              {navItems.map(({ text, icon, t }) => {
                 if (!icon) {
                   return (
-                    <Typography key={text} sx={{ m: "2.25rem 3rem 1rem 0" }}>
+                    <Typography
+                      fontSize={"1rem"}
+                      key={text}
+                      sx={{ m: "2.25rem 3rem 0.5rem 0" }}
+                    >
                       {text}
                     </Typography>
                   );
                 }
-                const lcText = text.toLocaleLowerCase();
+
+                const lcText = t.toLocaleLowerCase();
+
                 return (
-                  <ListItem key={text} disablePadding>
+                  <ListItem key={t} disablePadding>
                     <ListItemButton
                       onClick={() => {
                         navigate(`/${lcText}`);
@@ -166,11 +219,11 @@ const Sidebar = ({
                       sx={{
                         backgroundColor:
                           active === lcText
-                            ? theme.palette.secondary[300]
+                            ? theme.palette.secondary[500]
                             : "transparent",
                         color:
                           active === lcText
-                            ? theme.palette.primary[600]
+                            ? theme.palette.primary[900]
                             : theme.palette.secondary[100],
                       }}
                     >
@@ -185,7 +238,13 @@ const Sidebar = ({
                       >
                         {icon}
                       </ListItemIcon>
-                      <ListItemText primary={text} sx={{ ml: "2rem" }}>
+                      <ListItemText
+                        primary={text}
+                        sx={{
+                          ml: "2rem",
+                          textAlign: "start",
+                        }}
+                      >
                         {active === lcText && (
                           <ChevronRightOutlined sx={{ ml: "auto" }} />
                         )}
@@ -195,6 +254,52 @@ const Sidebar = ({
                 );
               })}
             </List>
+          </Box>
+          <Box position={"absolute"} bottom="2rem">
+            <Divider />
+            <Box
+              textTransform={"none"}
+              gap="1rem"
+              m="1.5rem 3rem 0 2rem"
+              sx={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Box
+                component={"img"}
+                alt="profile"
+                src={profileImage}
+                height="40px"
+                width="40px"
+                borderRadius={"50%"}
+                sx={{ objectFit: "cover" }}
+              />
+              <Box textAlign={"right"}>
+                <Typography
+                  fontWeight={"bold"}
+                  fontSize="0.9rem"
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                  {user.name}
+                </Typography>
+                <Typography
+                  fontWeight={"bold"}
+                  fontSize="0.6rem"
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                  {user.occupation}
+                </Typography>
+              </Box>
+
+              <SettingsOutlined
+                sx={{
+                  color: theme.palette.secondary[300],
+                  fontSize: "25px",
+                }}
+              />
+            </Box>
           </Box>
         </Drawer>
       )}
