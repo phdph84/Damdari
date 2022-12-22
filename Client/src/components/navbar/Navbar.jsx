@@ -19,6 +19,7 @@ import {
   Toolbar,
   Typography,
   useTheme,
+  useMediaQuery,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -26,6 +27,7 @@ import InputBase from "@mui/material/InputBase";
 import { themeSettings } from "theme";
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
+  const isNonMobile = useMediaQuery("(min-width:1000px");
   const dispatch = useDispatch();
   const theme = useTheme();
   const [anchorEL, setAnchorEl] = useState(null);
@@ -51,7 +53,12 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
           <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <MenuIcon />
           </IconButton>
-          <Typography variant="h2" ml={5} mr={5}>
+          <Typography
+            variant="h2"
+            ml={5}
+            mr={5}
+            display={isNonMobile ? undefined : "none"}
+          >
             سامانه هوشمند دامداری رهبان
           </Typography>
           <Box
