@@ -65,7 +65,7 @@ const navItems = [
     icon: <PublicOutlined />,
   },
   {
-    text: "مگهداری سیستم",
+    text: "نگهداری سیستم",
     t: "NegahdariSystem",
     icon: <PublicOutlined />,
   },
