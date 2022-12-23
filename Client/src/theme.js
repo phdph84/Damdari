@@ -14,7 +14,7 @@ export const tokenDark = {
         800:"#292929",
         900:"#141414",
         1000:"#000000",  //m
-    },
+    }, 
     primary:{
         //blue
         100:"#d3d4de",
@@ -91,8 +91,8 @@ export const themeSettings = (mode)=>{
                 //palette values for light mode
                 primary:{
                     ...tokensLight.primary,
-                    main:tokenDark.primary[400],
-                    light:tokenDark.primary[400]
+                    main:"#333",
+                    light:"#c0c0c0"
                 },
                 secondary:{
                     ...tokensLight.secondary,
@@ -110,30 +110,30 @@ export const themeSettings = (mode)=>{
             }
         },
         typography:{
-            fontFamily: ["Inter","sans-serif"].join(","),
+            fontFamily: ["vazir","sans-serif"].join(","),
             fontSize :12,
             h1:{
-                fontFamily: ["Inter","sans-serif"].join(","),
+                fontFamily: ["vazir","sans-serif"].join(","),
                 fontSize:40,
             },
             h2:{
-                fontFamily: ["Inter","sans-serif"].join(","),
+                fontFamily: ["vazir","sans-serif"].join(","),
                 fontSize:32,
             },
             h3:{
-                fontFamily: ["Inter","sans-serif"].join(","),
+                fontFamily: ["vazir","sans-serif"].join(","),
                 fontSize:24,
             },
             h4:{
-                fontFamily: ["Inter","sans-serif"].join(","),
+                fontFamily: ["vazir","sans-serif"].join(","),
                 fontSize:40,
             },
             h5:{
-                fontFamily: ["Inter","sans-serif"].join(","),
+                fontFamily: ["vazir","sans-serif"].join(","),
                 fontSize:16,
             },
             h6:{
-                fontFamily: ["Inter","sans-serif"].join(","),
+                fontFamily: ["vazir","sans-serif"].join(","),
                 fontSize:14,
             }
         }

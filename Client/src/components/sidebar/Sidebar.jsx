@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import profileImage from "../../assets/profile.jpg";
+import { GiCow } from "react-icons/gi";
 import {
   Box,
   Divider,
@@ -30,6 +31,11 @@ import {
   Groups2Outlined,
   ReceiptLongOutlined,
   TrendingUpOutlined,
+  MedicalInformationOutlined,
+  EventAvailableOutlined,
+  SettingsApplicationsOutlined,
+  LocalHospitalOutlined,
+  AddCircleOutline,
 } from "@mui/icons-material";
 import { useSelector } from "react-redux";
 
@@ -47,12 +53,12 @@ const navItems = [
   {
     text: "تولید مثل",
     t: "TolidMesl",
-    icon: <ShoppingCartOutlined />,
+    icon: <AddCircleOutline />,
   },
   {
     text: "سلامت",
     t: "Salamat",
-    icon: <Groups2Outlined />,
+    icon: <MedicalInformationOutlined />,
   },
   {
     text: "بهاربند",
@@ -62,12 +68,12 @@ const navItems = [
   {
     text: "گوساله",
     t: "Gosale",
-    icon: <PublicOutlined />,
+    icon: <GiCow style={{ width: "20px", height: "20px" }} />,
   },
   {
     text: "نگهداری سیستم",
     t: "NegahdariSystem",
-    icon: <PublicOutlined />,
+    icon: <LocalHospitalOutlined />,
   },
   {
     text: "مزرعه",
@@ -77,12 +83,12 @@ const navItems = [
   {
     text: "دام",
     t: "dam",
-    icon: <PointOfSaleOutlined />,
+    icon: <GiCow style={{ width: "20px", height: "20px" }} />,
   },
   {
     text: "رویداد",
     t: "Event",
-    icon: <TodayOutlined />,
+    icon: <EventAvailableOutlined />,
   },
   {
     text: "بهاربند",
@@ -92,7 +98,7 @@ const navItems = [
   {
     text: "تنظیمات",
     t: "Tanzimat",
-    icon: <PieChartOutlined />,
+    icon: <SettingsApplicationsOutlined />,
   },
   {
     text: "کیف پول",
@@ -101,7 +107,7 @@ const navItems = [
   },
 
   {
-    text: "نگهداری و بروزرسانی سیستم",
+    text: "نگهداری سیستم",
     t: "NegahdaryAndAUpdate",
     icon: <AdminPanelSettingsOutlined />,
   },
@@ -255,7 +261,7 @@ const Sidebar = ({
               })}
             </List>
           </Box>
-          <Box position={"absolute"} bottom="2rem">
+          <Box position={"absolute"} bottom="1.5rem">
             <Divider />
             <Box
               textTransform={"none"}
@@ -282,15 +288,15 @@ const Sidebar = ({
                   fontSize="0.9rem"
                   sx={{ color: theme.palette.secondary[100] }}
                 >
-                  {user.name}
+                  تنظیمات
                 </Typography>
-                <Typography
+                {/* <Typography
                   fontWeight={"bold"}
                   fontSize="0.6rem"
                   sx={{ color: theme.palette.secondary[200] }}
                 >
-                  {user.occupation}
-                </Typography>
+                  باغدار
+                </Typography> */}
               </Box>
 
               <SettingsOutlined

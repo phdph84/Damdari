@@ -84,6 +84,8 @@ const DoughnutChart = ({
                 display: false,
                 gridLines: {
                   display: false,
+                  gridLines: {},
+
                   drawBorder: false, //<- set this
                 },
                 ticks: {
@@ -96,6 +98,7 @@ const DoughnutChart = ({
                 display: false,
                 gridLines: {
                   display: false,
+                  gridLines: {},
                   drawBorder: false, //<- set this
                 },
                 ticks: {

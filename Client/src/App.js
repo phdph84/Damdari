@@ -21,9 +21,9 @@ function App() {
       <Routes>
         <Route element={<Layout/>}>
           <Route path="/" element={<Navigate to="/dashboard" replace/>} />
-          <Route path="/dashboard" element={<Customers/>}/>
+          <Route path="/dashboard" element={<Dashboard/>}/>
           <Route path="/tolidmesl" element={<Products/>}/>
-          <Route path="/salamat" element={<Dashboard/>}/>
+          <Route path="/salamat" element={<Customers/>}/>
         </Route>
       </Routes>
     </ThemeProvider> 

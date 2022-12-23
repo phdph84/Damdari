@@ -1,10 +1,16 @@
 import React, { useState } from "react";
+import { GiCow } from "react-icons/gi";
 import {
   LightModeOutlined,
   DarkModeOutlined,
   Search,
   SettingsOutlined,
   ArrowDropDownOutlined,
+  MessageOutlined,
+  UploadFileOutlined,
+  CloudCircleOutlined,
+  DownloadDoneOutlined,
+  DownloadForOfflineOutlined,
 } from "@mui/icons-material";
 import FlexBetween from "components/FlexBetween/FlexBetween";
 import { useDispatch } from "react-redux";
@@ -88,7 +94,14 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
             )}
           </IconButton>
           <IconButton>
-            <SettingsOutlined sx={{ fontSize: "25px" }} />
+            <DownloadForOfflineOutlined sx={{ fontSize: "25px" }} />
+          </IconButton>
+
+          <IconButton>
+            <MessageOutlined sx={{ fontSize: "25px" }} />
+          </IconButton>
+          <IconButton>
+            <GiCow style={{ fontSize: "25px" }} />
           </IconButton>
           <Box
             sx={{
@@ -129,7 +142,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                   fontSize="0.75rem"
                   sx={{ color: theme.palette.secondary[200] }}
                 >
-                  {user.occupation}
+                  باغدار
                 </Typography>
               </Box>
               <ArrowDropDownOutlined
