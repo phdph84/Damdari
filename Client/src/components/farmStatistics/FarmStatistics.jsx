@@ -7,7 +7,7 @@ const FarmStatistics = () => {
 
   return (
     <Box
-      mt="40px"
+      mt="30px"
       mb="2rem"
       height="100%"
       width="100%"
@@ -28,8 +28,8 @@ const FarmStatistics = () => {
             width: "10%",
           }}
         >
-          <Typography>تعداد ماده ها</Typography>
-          <Typography>134</Typography>
+          <Typography fontSize={"0.7rem"}>تعداد ماده ها</Typography>
+          <Typography fontSize={"0.7rem"}>134</Typography>
         </Box>
         <Box
           sx={{
@@ -57,14 +57,18 @@ const FarmStatistics = () => {
               ml: "1rem",
             }}
           >
-            <Typography mr={1}> 41%</Typography>
+            <Typography mr={1} fontSize={"0.5rem"}>
+              41%
+            </Typography>
           </Box>
           <Box
             sx={{
               borderRight: `2px solid ${theme.palette.primary.light}`,
             }}
           >
-            <Typography mr={1}> 54 تلیسه</Typography>
+            <Typography mr={1} fontSize={"0.5rem"}>
+              54 تلیسه
+            </Typography>
           </Box>
         </Box>
       </Box>
@@ -81,8 +85,8 @@ const FarmStatistics = () => {
             width: "10%",
           }}
         >
-          <Typography>دام های بالغ</Typography>
-          <Typography>77</Typography>
+          <Typography fontSize={"0.7rem"}>دام های بالغ</Typography>
+          <Typography fontSize={"0.7rem"}>77</Typography>
         </Box>
         <Box sx={{ width: "100%" }}>
           <Box
@@ -122,16 +126,26 @@ const FarmStatistics = () => {
                   ml: "1rem",
                 }}
               >
-                <Typography mr={1}> 99%</Typography>
-                <Typography mr={1}> 1%</Typography>
+                <Typography mr={1} fontSize={"0.5rem"}>
+                  {" "}
+                  99%
+                </Typography>
+                <Typography mr={1} fontSize={"0.5rem"}>
+                  {" "}
+                  1%
+                </Typography>
               </Box>
               <Box
                 sx={{
                   borderRight: `2px solid ${theme.palette.primary.light}`,
                 }}
               >
-                <Typography mr={1}>76 دوشا</Typography>
-                <Typography mr={1}>1 خشک</Typography>
+                <Typography mr={1} fontSize={"0.5rem"}>
+                  76 دوشا
+                </Typography>
+                <Typography mr={1} fontSize={"0.5rem"}>
+                  1 خشک
+                </Typography>
               </Box>
             </Box>
           </Box>
@@ -167,8 +181,14 @@ const FarmStatistics = () => {
                   ml: "1rem",
                 }}
               >
-                <Typography mr={1}> 45%</Typography>
-                <Typography mr={1}> 0%</Typography>
+                <Typography mr={1} fontSize={"0.5rem"}>
+                  {" "}
+                  45%
+                </Typography>
+                <Typography mr={1} fontSize={"0.5rem"}>
+                  {" "}
+                  0%
+                </Typography>
               </Box>
               <Box
                 sx={{
@@ -177,8 +197,12 @@ const FarmStatistics = () => {
                   flexDirection: "column",
                 }}
               >
-                <Typography mr={1}>35 آبستن</Typography>
-                <Typography mr={1}>0 تلقیح نشود</Typography>
+                <Typography mr={1} fontSize={"0.5rem"}>
+                  35 آبستن
+                </Typography>
+                <Typography mr={1} fontSize={"0.5rem"}>
+                  0 تلقیح نشود
+                </Typography>
               </Box>
             </Box>
           </Box>
@@ -197,8 +221,8 @@ const FarmStatistics = () => {
             width: "10%",
           }}
         >
-          <Typography>تعداد تلیسه ها</Typography>
-          <Typography>54</Typography>
+          <Typography fontSize={"0.7rem"}>تعداد تلیسه ها</Typography>
+          <Typography fontSize={"0.7rem"}>54</Typography>
         </Box>
         <Box
           sx={{
@@ -226,14 +250,19 @@ const FarmStatistics = () => {
               ml: "1rem",
             }}
           >
-            <Typography mr={1}> 0%</Typography>
+            <Typography mr={1} fontSize={"0.5rem"}>
+              {" "}
+              0%
+            </Typography>
           </Box>
           <Box
             sx={{
               borderRight: `2px solid ${theme.palette.primary.light}`,
             }}
           >
-            <Typography mr={1}>0 تلیسه آبستن</Typography>
+            <Typography mr={1} fontSize={"0.5rem"}>
+              0 تلیسه آبستن
+            </Typography>
           </Box>
         </Box>
       </Box>

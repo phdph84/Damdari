@@ -17,11 +17,11 @@ const Dashboard = () => {
         container
         sx={{
           width: "100%",
-          height: "45vh",
+          height: "40vh",
           display: "flex",
           justifyContent: "space-evenly",
           mt: "0.5rem",
-          mb: "1rem",
+          mb: "2.5rem",
         }}
       >
         <Grid
@@ -42,22 +42,32 @@ const Dashboard = () => {
           item
           sx={{
             backgroundColor: theme.palette.background.alt,
-            width: "49%",
+            width: "25%",
             height: "45vh",
             borderRadius: "20px",
             display: "flex",
             flexDirection: "column",
           }}
         >
-          <Header title={"دام های نیازمند مراقبت"} />
-          <DamMoraghebat />
+          <ChartPanel />
         </Grid>
+        <Grid
+          item
+          sx={{
+            backgroundColor: theme.palette.background.alt,
+            width: "23.2%",
+            height: "45vh",
+            borderRadius: "20px",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        ></Grid>
       </Grid>
       <Grid
         container
         sx={{
           width: "100%",
-          height: "45vh",
+          height: "40vh",
           display: "flex",
           justifyContent: "space-evenly",
           mt: "0.5rem",
@@ -88,7 +98,8 @@ const Dashboard = () => {
             borderRadius: "20px",
           }}
         >
-          <ChartPanel />
+          <Header title={"دام های نیازمند مراقبت"} />
+          <DamMoraghebat />
         </Grid>
       </Grid>
     </Box>

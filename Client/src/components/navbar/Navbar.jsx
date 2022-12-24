@@ -60,7 +60,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
             <MenuIcon />
           </IconButton>
           <Typography
-            variant="h2"
+            variant="h5"
             ml={5}
             mr={5}
             display={isNonMobile ? undefined : "none"}

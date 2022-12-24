@@ -5,15 +5,15 @@ import React from "react";
 import { useGetCustomersQuery } from "States/api";
 
 const columns = [
-  { field: "_id", headerName: "کد دام", width: 100 },
-  { field: "name", headerName: "وضعیت", width: 100 },
-  { field: "email", headerName: "بهاربند", width: 130 },
+  { field: "_id", headerName: "کد دام", width: 70 },
+  { field: "name", headerName: "وضعیت", width: 70 },
+  { field: "email", headerName: "بهاربند", width: 100 },
 
-  { field: "country", headerName: "سن", width: 100 },
+  { field: "country", headerName: "سن", width: 60 },
   {
     field: "occupation",
     headerName: "روزهای فحلی",
-    width: 200,
+    width: 180,
 
     renderCell: (params) => {
       return (
@@ -47,11 +47,11 @@ const DamFasl = () => {
           backgroundColor: theme.palette.background.alt,
           color: theme.palette.secondary[100],
           borderBottom: "none",
-          fontSize: 14,
+          fontSize: "0.7rem",
         },
         "& .MuiDataGrid-virtualScroller": {
           backgroundColor: theme.palette.primary.light,
-          fontSize: 14,
+          fontSize: "0.7rem",
           "&::-webkit-scrollbar": {
             width: 12,
           },

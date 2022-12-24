@@ -165,7 +165,7 @@ const Sidebar = ({
                   display={"flex"}
                   alignItems={"center"}
                   gap={"0.5rem"}
-                  mb={"1rem"}
+                  // mb={"0.1rem"}
                 >
                   {/* <Typography variant="h4" fontWeight="bold">
                     رهبان
@@ -177,7 +177,7 @@ const Sidebar = ({
                       style={{
                         width: "100px",
                         height: "40px",
-                        marginTop: "10px",
+                        // marginTop: "10px",
                       }}
                     ></img>
                   ) : (
@@ -187,7 +187,7 @@ const Sidebar = ({
                       style={{
                         width: "100px",
                         height: "40px",
-                        marginTop: "10px",
+                        // marginTop: "10px",
                       }}
                     ></img>
                   )}
@@ -204,9 +204,9 @@ const Sidebar = ({
                 if (!icon) {
                   return (
                     <Typography
-                      fontSize={"1rem"}
+                      fontSize={"0.8rem"}
                       key={text}
-                      sx={{ m: "2.25rem 3rem 0.5rem 0" }}
+                      sx={{ m: "2rem 3rem 0rem 0" }}
                     >
                       {text}
                     </Typography>
@@ -216,7 +216,15 @@ const Sidebar = ({
                 const lcText = t.toLocaleLowerCase();
 
                 return (
-                  <ListItem key={t} disablePadding>
+                  <ListItem
+                    key={t}
+                    disablePadding
+                    sx={{
+                      "& .MuiTypography-root ": {
+                        fontSize: "9px",
+                      },
+                    }}
+                  >
                     <ListItemButton
                       onClick={() => {
                         navigate(`/${lcText}`);
@@ -236,6 +244,7 @@ const Sidebar = ({
                       <ListItemIcon
                         sx={{
                           mr: "2rem",
+
                           color:
                             active === lcText
                               ? theme.palette.primary[600]

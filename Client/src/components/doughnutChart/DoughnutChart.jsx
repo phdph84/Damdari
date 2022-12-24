@@ -22,8 +22,8 @@ const DoughnutChart = ({
   return (
     <Box
       sx={{
-        width: x ? x : "250px",
-        height: y ? y : "250px",
+        width: x ? x : "150px",
+        height: y ? y : "150px",
         position: "relative",
         // [theme.breakpoints.down("md")]: {
         //   width: "90px",
@@ -44,7 +44,7 @@ const DoughnutChart = ({
               ],
               borderColor: "inherit",
               borderWidth: 0,
-              cutout: cutoff ? cutoff : "60%",
+              cutout: cutoff ? cutoff : "70%",
             },
           ],
         }}
@@ -110,13 +110,13 @@ const DoughnutChart = ({
         }}
       />
       <Typography
-        fontSize={fontS ? fontS : 22}
+        fontSize={fontS ? fontS : 16}
         color={theme.palette.secondary[100]}
         sx={{
           direction: "rtl",
           position: "absolute",
           top: "42%",
-          right: "35%",
+          right: "30%",
           //   [theme.breakpoints.down("md")]: {
           //     fontSize: 10,
           //   },

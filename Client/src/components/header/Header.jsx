@@ -8,6 +8,7 @@ const Header = ({ title, subTitle }) => {
         variant="h5"
         color={theme.palette.secondary[100]}
         fontWeight="bold"
+        fontSize={"0.7rem"}
         sx={{ mb: "5px", mt: "1rem", mr: "1rem" }}
       >
         {title}
